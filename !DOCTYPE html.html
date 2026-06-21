@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EZCRACKS Beaming</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000000;
+            color: white;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+        canvas { position: fixed; top: 0; left: 0; z-index: 1; pointer-events: none; }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            position: relative;
+            z-index: 10;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 26px;
+            font-weight: 700;
+        }
+        .logo img {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+        }
+
+        .main-logo {
+            width: 140px;
+            height: 140px;
+            margin: 30px auto;
+            display: block;
+            border-radius: 12px;
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 48px;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 10;
+        }
+        .beaming { color: #ffd700; }
+
+        .subtitle {
+            text-align: center;
+            font-size: 18px;
+            opacity: 0.8;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 10;
+        }
+        .stat {
+            background: rgba(255,255,255,0.08);
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-align: center;
+            min-width: 170px;
+        }
+
+        .generators {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 22px;
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+        .card {
+            background: rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .card:hover { transform: translateY(-10px); background: rgba(255,255,255,0.1); }
+
+        .card.highlight {
+            border: 3px solid #ffd700;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+        }
+
+        .visit-btn {
+            margin-top: 20px;
+            padding: 14px 36px;
+            border-radius: 999px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            background: #ffd700;
+            color: black;
+            font-size: 15px;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background: #111;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 420px;
+        }
+        .modal button {
+            padding: 14px 40px;
+            margin: 10px;
+            border-radius: 999px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .discord-btn { background: #5865F2; color: white; }
+    </style>
+</head>
+<body>
+    <canvas id="snow"></canvas>
+
+    <header>
+        <div class="logo">
+            <img src="https://cdn.corenexis.com/f/t5nYNINNIGp.jpg" alt="Logo">
+            EZCRACKS
+        </div>
+    </header>
+
+    <img src="https://cdn.corenexis.com/f/t5nYNINNIGp.jpg" class="main-logo" alt="Main Logo">
+
+    <h1>EZCRACKS <span class="beaming">Beaming</span></h1>
+    <p class="subtitle">The most reliable beaming generators in one place. Fast, secure, and always updated.</p>
+
+    <div class="stats">
+        <div class="stat"><strong>50.0K+</strong><br>Site Visits</div>
+        <div class="stat"><strong>147.0K+</strong><br>Trusted By</div>
+        <div class="stat"><strong>89.0K+</strong><br>Links Generated</div>
+    </div>
+
+    <div class="generators">
+        <div class="card">
+            <h3>INJURIES</h3>
+            <p>Create a roblox phishing site with ease.</p>
+            <button class="visit-btn" onclick="window.open('https://logged.tg/dashboard', '_blank')">VISIT GEN →</button>
+        </div>
+        <div class="card">
+            <h3>SPLUNK</h3>
+            <p>Create a roblox phishing site with ease.</p>
+            <button class="visit-btn" onclick="window.open('https://app.beamers.si/dashboard', '_blank')">VISIT GEN →</button>
+        </div>
+        <div class="card">
+            <h3>BEAMSE</h3>
+            <p>Create a roblox phishing site with ease.</p>
+            <button class="visit-btn" onclick="window.open('https://app.beamse.pro', '_blank')">VISIT GEN →</button>
+        </div>
+        <div class="card highlight">
+            <h3>🏆 SHOCKIFY</h3>
+            <p>Create a roblox phishing site with ease.</p>
+            <button class="visit-btn" onclick="window.open('https://shockify.st/?code=NTY0NTkxMzExMzMwNTk5OTYwMg==', '_blank')">VISIT GEN →</button>
+        </div>
+        <div class="card highlight">
+            <h3>🏆 IMMORTAL</h3>
+            <p>Create a roblox phishing site with ease.</p>
+            <button class="visit-btn" onclick="window.open('https://immortal.st/?code=NTY0NTkxMzExMzMwNTk5OTYwMg==', '_blank')">VISIT GEN →</button>
+        </div>
+    </div>
+
+    <!-- Welcome Modal -->
+    <div id="welcomeModal" class="modal" style="display: flex;">
+        <div class="modal-content">
+            <h2>Welcome to EZCRACKS</h2>
+            <p>Join our Discord for updates and support!</p>
+            <button class="discord-btn" onclick="joinDiscord()">Join the Discord</button>
+            <button onclick="closeModal()" style="background:transparent; border:1px solid #555; color:white;">No thanks</button>
+        </div>
+    </div>
+
+    <script>
+        // Snow Effect
+        const canvas = document.getElementById('snow');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height - canvas.height;
+                this.size = Math.random() * 4.5 + 2;
+                this.speed = Math.random() * 1.2 + 0.6;
+                this.xSpeed = Math.random() * 0.6 - 0.3;
+            }
+            update() {
+                this.y += this.speed;
+                this.x += this.xSpeed;
+                if (this.y > canvas.height) this.reset();
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initSnow() {
+            particles = [];
+            for (let i = 0; i < 70; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+
+        // Modal
+        function closeModal() {
+            document.getElementById('welcomeModal').style.display = 'none';
+        }
+        function joinDiscord() {
+            window.open('https://discord.gg/yourlink', '_blank'); // Ändere den Link bei Bedarf
+            closeModal();
+        }
+
+        // Init
+        resizeCanvas();
+        initSnow();
+        animate();
+
+        setTimeout(() => {
+            document.getElementById('welcomeModal').style.display = 'flex';
+        }, 600);
+    </script>
+</body>
+</html>
